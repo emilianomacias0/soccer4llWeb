@@ -1,0 +1,36 @@
+<template name="Categorias">
+    <div class="content-heading">
+        <div>Categorias
+           <small>Registra / Edita las categorias de la liga</small>
+        </div>
+     </div>
+<div class="row">
+    <div class="col-md-6">
+       <!-- START card-->
+       <div class="card card-default">
+          <div class="card-header">Nueva categoria</div>
+          <div class="card-body">
+              {{#if estado}}
+             {{> quickForm collection="Categorias"  id="insertCategoriasForm" type="insert" buttonContent="Guardar"}}
+             {{else}}
+             {{> quickForm collection="Categorias" doc=doc id="updateCategoriasForm" type="update" buttonContent="Actualizar"}}
+             {{/if}}
+             {{>uploadForm}}
+             {{>image}}
+          </div>
+       </div>
+       <!-- END card-->
+    </div>
+    <div class="col-md-6">
+        <!-- START card-->
+        <div class="card card-default">
+           <div class="card-header">Categorias</div>
+           <div class="card-body">
+            {{> tabular table=TabularTables.Categorias class="table table-striped table-bordered table-condensed"}}
+           </div>
+        </div>
+        <!-- END card-->
+     </div>
+    </div>
+
+</template>

@@ -1,0 +1,1 @@
+import './editCategoria.html';

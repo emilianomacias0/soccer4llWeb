@@ -1,0 +1,24 @@
+<template name="layout">
+      {{#if currentUser}}
+      <div class="wrapper">
+         <!-- top navbar-->
+         {{> topnavbar }}
+         <!-- sidebar-->
+         {{> sidebar }}
+         <!-- offsidebar-->
+         {{> offsidebar}}
+         <!-- Main section-->
+         <section class="section-container">
+            <!-- Page content-->
+            <div class="content-wrapper">
+               {{> Template.dynamic template=content }}
+            </div>
+         </section>
+         <!-- Page footer-->
+         {{> footer }}
+      </div>
+      {{> Template.dynamic template=bodyContent }}
+      {{else}}
+      {{>app_login}}
+      {{/if}}
+</template>

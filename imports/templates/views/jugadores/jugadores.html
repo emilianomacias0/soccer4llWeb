@@ -1,0 +1,31 @@
+<template name="Jugadores">
+        <div class="content-heading">
+            <div>Jugadores
+               <small>Registra / Edita los jugadores de la liga</small>
+            </div>
+         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- START card-->
+                <div class="card card-default">
+                   <div class="card-header">Nuevo jugador</div>
+                   <div class="card-body">
+                    {{> quickForm collection="Jugadores"  id="insertJugadoresForm" type="insert" buttonContent="Guardar"}}
+                    {{>uploadForm}}
+                    {{>image}}
+                   </div>
+                </div>
+                <!-- END card-->
+             </div>
+             <div class="col-md-6">
+                <!-- START card-->
+                <div class="card card-default">
+                   <div class="card-header">Jugadores</div>
+                   <div class="card-body">
+                    {{> tabular table=TabularTables.Jugadores class="table table-striped table-bordered table-condensed"}}
+                   </div>
+                </div>
+                <!-- END card-->
+             </div>
+        </div>
+    </template>

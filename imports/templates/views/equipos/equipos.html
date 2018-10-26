@@ -1,0 +1,31 @@
+<template name="Equipos">
+    <div class="content-heading">
+        <div>Equipos
+           <small>Registra / Edita los equipos de la liga</small>
+        </div>
+     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <!-- START card-->
+            <div class="card card-default">
+               <div class="card-header">Nuevo equipo</div>
+               <div class="card-body">
+                {{> quickForm collection="Equipos"  id="insertEquiposForm" type="insert" buttonContent="Guardar"}}
+                {{>uploadForm}}
+                {{>image}}
+               </div>
+            </div>
+            <!-- END card-->
+         </div>
+         <div class="col-md-6">
+            <!-- START card-->
+            <div class="card card-default">
+               <div class="card-header">Equipos</div>
+               <div class="card-body">
+                {{> tabular table=TabularTables.Equipos class="table table-striped table-bordered table-condensed"}}
+               </div>
+            </div>
+            <!-- END card-->
+         </div>
+    </div>
+</template>
